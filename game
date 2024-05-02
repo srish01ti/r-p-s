@@ -1,0 +1,35 @@
+package com.example.rockpaper
+
+fun main(){
+    var computer=""
+    var player=""
+    println("rock,paper,scissor")
+    player= readln()
+    val random =(1..3).random()
+
+    if(random==1){
+        computer ="Rock"
+    }
+   else if(random==2){
+        computer ="Paper"
+    }
+   else if(random==3){
+        computer ="Scissor"
+    }
+    println(computer)
+    val winner= when{
+        player==computer ->"tie"
+        player=="Rock" && computer=="Scissor" ->"player"
+        player=="Paper" && computer=="Rock" ->"player"
+        player=="Scissor" && computer=="Paper" ->"player"
+        else ->"computer"
+    }
+
+    if(winner=="tie"){
+        println("Its a tie")
+    }else if(winner == "player"){
+        println("player won")
+    }else{
+        println("computer wins")
+    }
+}
